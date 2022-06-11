@@ -22,7 +22,7 @@ export interface ControllerOptions {
 	/**
 	 * The router prefix for the controller. Controller routes will append the prefix
 	 */
-	prefix: ControllerPrefix[] | ControllerPrefix;
+	prefix: RoutePath[] | RoutePath;
 
 	/**
 	 * The versions accepted by the controller. Per-route versions can override controller versions
@@ -30,7 +30,7 @@ export interface ControllerOptions {
 	version: ControllerVersion[] | ControllerVersion;
 }
 
-export type ControllerPrefix = `/${string}`;
+export type RoutePath = `/${string}`;
 
 export type ControllerVersion =
 	| `v${ControllerVersionValue}`
