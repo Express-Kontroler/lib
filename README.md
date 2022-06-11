@@ -1,8 +1,8 @@
 <div align="center">
-<img src="https://imgur.com/0PQfddl.png" align="center" width="15%" alt="">
+<img src="https://imgur.com/oWXXciT.png" align="center" width="15%" alt="">
 
-# Kontroler Template
+# @kontroler/lib
 
-**_A template for Kontroler projects._**
+**_A lightweight express framework for scalable Node.js APIs._**
 
 </div>

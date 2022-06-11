@@ -1,6 +1,6 @@
 {
 	"name": "@kontroler/template",
-	"description": "A template for Kontroler projects.",
+	"description": "A lightweight express framework for scalable Node.js APIs.",
 	"license": "Apache-2.0",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:express-kontroler/kontroler-template.git"
+		"url": "git@github.com:express-kontroler/lib.git"
 	},
 	"publishConfig": {
 		"access": "public"
