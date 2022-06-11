@@ -4,7 +4,7 @@ import { CONTROLLER_METADATA, CONTROLLER_PREFIX_METADATA, CONTROLLER_VERSION_MET
  * A decorator that adds controller metadata to a class
  * @param options The options to apply to the controller
  */
-export function Controller(options: Partial<ControllerOptions> = {}): ClassDecorator {
+export const Controller = (options: Partial<ControllerOptions> = {}): ClassDecorator => {
 	if (!options?.prefix) options.prefix = "/";
 	if (!options?.version) options.version = "v1";
 
@@ -16,7 +16,7 @@ export function Controller(options: Partial<ControllerOptions> = {}): ClassDecor
 		Reflect.defineMetadata(CONTROLLER_PREFIX_METADATA, prefix, target);
 		Reflect.defineMetadata(CONTROLLER_VERSION_METADATA, version, target);
 	};
-}
+};
 
 export interface ControllerOptions {
 	/**
