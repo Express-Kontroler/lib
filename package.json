@@ -27,6 +27,9 @@
 		"test": "npx jest --coverage",
 		"dev": "npx nodemon"
 	},
+	"dependencies": {
+		"reflect-metadata": "^0.1.13"
+	},
 	"devDependencies": {
 		"@types/jest": "^27.5.1",
 		"@types/node": "^17.0.38",
