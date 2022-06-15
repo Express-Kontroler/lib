@@ -1,3 +1,4 @@
+import { arraify } from "../utilities";
 import { CONTROLLER_METADATA, CONTROLLER_PREFIX_METADATA, CONTROLLER_VERSION_METADATA } from "../constants";
 
 /**
@@ -8,8 +9,8 @@ export const Controller = (options: Partial<ControllerOptions> = {}): ClassDecor
 	if (!options?.prefix) options.prefix = "/";
 	if (!options?.version) options.version = "v1";
 
-	const prefix = Array.isArray(options.prefix) ? options.prefix : [options.prefix];
-	const version = Array.isArray(options.version) ? options.version : [options.version];
+	const prefix = arraify(options.prefix);
+	const version = arraify(options.version);
 
 	return (target: object) => {
 		Reflect.defineMetadata(CONTROLLER_METADATA, true, target);
