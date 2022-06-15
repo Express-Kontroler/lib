@@ -3,4 +3,4 @@
  * @param value The value to convert to an array
  *
  */
-export const arraify = (value: unknown) => (Array.isArray(value) ? value : [value]);
+export const arrayfy = (value: unknown) => (Array.isArray(value) ? value : [value]);
