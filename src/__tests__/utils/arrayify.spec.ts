@@ -12,6 +12,6 @@ describe("utils.arrayify", () => {
 		const value = "sample1";
 		const result = arrayify(value);
 
-		expect(result).toEqual(["sample1"]);
+		expect(result).toStrictEqual(["sample1"]);
 	});
 });
