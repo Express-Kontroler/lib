@@ -1,5 +1,5 @@
-import { arrayify } from "../utilities";
 import { CONTROLLER_METADATA, CONTROLLER_PREFIX_METADATA, CONTROLLER_VERSION_METADATA } from "../constants";
+import { arrayify } from "../utils/arrayify";
 
 /**
  * A decorator that adds controller metadata to a class
