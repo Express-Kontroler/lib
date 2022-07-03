@@ -22,4 +22,4 @@ export interface MiddlewareOptions {
 	order?: "pre" | "post";
 }
 
-export type MiddlewareFn = (req: Request, res: Response, next: NextFunction) => void;
+export type MiddlewareFn = (req: Request, res: Response, next: NextFunction) => Promise<unknown> | unknown;
