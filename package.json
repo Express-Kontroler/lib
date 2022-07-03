@@ -22,7 +22,7 @@
 	],
 	"scripts": {
 		"format": "npx prettier --write src test",
-		"lint": "npx eslint src test --fix",
+		"lint": "npx eslint src tests --fix",
 		"test": "npx vitest run",
 		"test:coverage": "npx vitest run",
 		"test:watch": "npx vitest",
