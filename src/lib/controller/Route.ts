@@ -1,5 +1,5 @@
-import { CONTROLLER_ROUTE_METHOD_METADATA, CONTROLLER_ROUTE_PATH_METADATA } from "../../constants";
-import type { RoutePath } from "../Controller";
+import { CONTROLLER_ROUTE_METHOD_METADATA, CONTROLLER_ROUTE_PATH_METADATA } from "../constants";
+import type { RoutePath } from "./Controller";
 
 /**
  * A decorator that adds route metadata to a class method
