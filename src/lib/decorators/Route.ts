@@ -1,5 +1,5 @@
-import { CONTROLLER_ROUTE_METHOD_METADATA, CONTROLLER_ROUTE_PATH_METADATA } from "../constants";
 import type { RoutePath } from "./Controller";
+import { ROUTE_METADATA } from "../constants";
 
 /**
  * A decorator that adds route metadata to a class method
@@ -11,9 +11,8 @@ export const makeMethodRouteDecorator = (options: RouteOptions): MethodDecorator
 	const method = options.method;
 	const path = Array.isArray(options.path) ? options.path : [options.path];
 
-	return (target: object) => {
-		Reflect.defineMetadata(CONTROLLER_ROUTE_METHOD_METADATA, method, target);
-		Reflect.defineMetadata(CONTROLLER_ROUTE_PATH_METADATA, path, target);
+	return (_target: object, _key: string | symbol, descriptor: TypedPropertyDescriptor<any>) => {
+		Reflect.defineMetadata(ROUTE_METADATA, { method, path }, descriptor.value);
 	};
 };
 
