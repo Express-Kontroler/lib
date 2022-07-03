@@ -31,7 +31,7 @@
 		/* Type Checking */
 		"strict": true,
 		"alwaysStrict": true,
-		"noImplicitAny": true,
+		"noImplicitAny": false,
 		"strictNullChecks": true,
 		"strictBindCallApply": true,
 		"strictPropertyInitialization": true,
