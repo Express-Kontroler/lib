@@ -2,6 +2,8 @@ import "reflect-metadata";
 
 export * from "./constants";
 
-export * from "./controller/Controller";
-export * from "./controller/Middleware";
-export * from "./controller/http/route";
+export * from "./decorators/Controller";
+export * from "./decorators/Middleware";
+export * from "./decorators/Route";
+
+export * as Utils from "./utils";

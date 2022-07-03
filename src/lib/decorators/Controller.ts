@@ -1,5 +1,5 @@
-import { arrayify } from "../utilities";
-import { CONTROLLER_METADATA, CONTROLLER_PREFIX_METADATA, CONTROLLER_VERSION_METADATA } from "../constants";
+import { CONTROLLER_METADATA } from "../constants";
+import { arrayify } from "../utils/arrayify";
 
 /**
  * A decorator that adds controller metadata to a class
@@ -13,9 +13,7 @@ export const Controller = (options: Partial<ControllerOptions> = {}): ClassDecor
 	const version = arrayify(options.version);
 
 	return (target: object) => {
-		Reflect.defineMetadata(CONTROLLER_METADATA, true, target);
-		Reflect.defineMetadata(CONTROLLER_PREFIX_METADATA, prefix, target);
-		Reflect.defineMetadata(CONTROLLER_VERSION_METADATA, version, target);
+		Reflect.defineMetadata(CONTROLLER_METADATA, { prefix, version }, target);
 	};
 };
 
