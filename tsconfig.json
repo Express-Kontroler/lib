@@ -16,9 +16,9 @@
 		"resolveJsonModule": true,
 
 		/* Emit */
-		"declaration": false,
-		"declarationMap": false,
-		"sourceMap": false,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
 		"removeComments": true,
 		"preserveConstEnums": true,
 		"importsNotUsedAsValues": "error",

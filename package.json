@@ -2,8 +2,8 @@
 	"name": "@kontroler/lib",
 	"description": "A lightweight express framework for scalable Node.js APIs.",
 	"license": "Apache-2.0",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts",
 	"version": "1.0.0",
 	"engines": {
 		"node": ">=16.0.0"
@@ -18,11 +18,11 @@
 	"files": [
 		"dist",
 		"!dist/*.tsbuildinfo",
-		"!dist/__tests__"
+		"!dist/tests"
 	],
 	"scripts": {
 		"format": "npx prettier --write src test",
-		"lint": "npx eslint src tests --fix",
+		"lint": "npx eslint src --fix",
 		"test": "npx vitest run",
 		"test:coverage": "npx vitest run",
 		"test:watch": "npx vitest",
