@@ -12,7 +12,7 @@
 		/* Modules */
 		"module": "CommonJS",
 		"moduleResolution": "node",
-		"types": ["node", "jest"],
+		"types": ["node"],
 		"resolveJsonModule": true,
 
 		/* Emit */
@@ -45,5 +45,5 @@
 		/* Completeness */
 		"skipLibCheck": true
 	},
-	"include": ["src"]
+	"include": ["src", "tests"]
 }
