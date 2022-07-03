@@ -25,8 +25,8 @@
 		"lint": "npx eslint src test --fix",
 		"test": "npx vitest run",
 		"test:coverage": "npx vitest run",
-		"test:watch": "npx vitest run",
-		"test:coverage:watch": "npx vitest run --coverage",
+		"test:watch": "npx vitest",
+		"test:coverage:watch": "npx vitest --coverage",
 		"build": "npx tsc -b .",
 		"build:dev": "npx tsc -w"
 	},
