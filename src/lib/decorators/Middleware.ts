@@ -1,33 +1,23 @@
-import { MIDDLEWARE_METADATA, MIDDLEWARE_ORDER_METADATA, MIDDLEWARE_FN_METADATA } from "../constants";
 import type { NextFunction, Request, Response } from "express";
+import { MIDDLEWARE_METADATA } from "../constants";
+import { mergeArrayMetadata } from "../utils";
 
 /**
  * A decorator that adds middleware metadata to a controller method
  * @param fn
  * @param options
  */
-export const Middleware = (fn: MiddlewareFn, options: Partial<MiddlewareOptions> = {}): PropertyDecorator => {
+export const Middleware = (fn: MiddlewareFn, options: Partial<MiddlewareOptions> = {}): MethodDecorator => {
 	if (!options?.order) options.order = "pre";
 
-	const orders = [options.order];
-	const fns = [fn];
-
-	return (target: object) => {
-		const middleware: boolean = Reflect.getMetadata(MIDDLEWARE_METADATA, target);
-
-		if (middleware) {
-			orders.push(...Reflect.getMetadata(MIDDLEWARE_ORDER_METADATA, target));
-			fns.push(...Reflect.getMetadata(MIDDLEWARE_FN_METADATA, target));
-		} else Reflect.defineMetadata(MIDDLEWARE_METADATA, true, target);
-
-		Reflect.defineMetadata(MIDDLEWARE_ORDER_METADATA, orders, target);
-		Reflect.defineMetadata(MIDDLEWARE_FN_METADATA, fns, target);
+	return (_target: object, _key: string | symbol, descriptor: TypedPropertyDescriptor<any>) => {
+		mergeArrayMetadata(MIDDLEWARE_METADATA, [{ order: options.order, fn }], descriptor.value);
 	};
 };
 
 export interface MiddlewareOptions {
 	/**
-	 * The order determines the middleware execution.
+	 * The order determines the middleware execution
 	 */
 	order?: "pre" | "post";
 }
